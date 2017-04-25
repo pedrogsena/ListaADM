@@ -8,7 +8,6 @@ int main()
     int number,index;
     int tamanho=0;
     int qte_dezenas=0;
-    char c;
     vetor=NULL;
 
     do{
@@ -21,23 +20,14 @@ int main()
 
         for(index=0;index<10;index++){
 
-            do{
-                c=fgetc(stdin);
-            } while(c=='\n');
-
-            if(c<'0'||c>'9'){
-                printf("\nDigito invalido.\n");
-                exit(1);
-            }
-
-            number=atoi(&c);
+            scanf(" %d", &number);
             if(number==0) break;
 
             vetor[index+10*qte_dezenas]=number;
             tamanho++;
 
         }
-
+        
         if(number!=0) qte_dezenas++;
 
     } while(number!=0);
